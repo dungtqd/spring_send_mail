@@ -1,0 +1,55 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+logging:
+  level:
+    ROOT: INFO
+    tech.jhipster: INFO
+    org.hibernate.SQL: INFO
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: spring_mail_sender
+  jpa:
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate.jdbc.time_zone: UTC
+        hibernate.generate_statistics: false
+        hibernate.format_sql: true
+      open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://172.16.15.11:3308/}${DATABASE_NAME:dungtq_send_mail}?createDatabaseIfNotExist=true&jdbcCompliantTruncation=false
+    #    url: ${DATABASE_URL:jdbc:mysql://171.244.51.190:3308/}${DATABASE_NAME:news}?createDatabaseIfNotExist=true
+    username: root
+    password: ROOTPWD
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dungtqcode@gmail.com
+    password: vxbroozqzyrwheja
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
