@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
     private String sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
         String toAddress = user.getEmail();
         String fromAddress = "dungtqcode@gmail.com";
-        String senderName = "dmdungtrongoccho@gmail.com";
+        String senderName = "DungTQ Dang Di Code";
         String subject = "Please verify your registration";
         String content = "Dear [[name]],<br>"
                 + "Please click the link below to verify your registration:<br>"
